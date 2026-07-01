@@ -7,36 +7,24 @@ void	ft_putchar(char	c)
 
 void	ft_print_comb2(void)
 {
-	char	num1;
-	char	num2;
-	char	num3;
-	char	num4;
+	int	num1;
+	int	num2;
 
-	num1 = '0';
-	while (num1 <= '9')
+	num1 = 0;
+	while (num1 <= 98)
 	{
-		num2 = '0';
-		while (num2 <= '8')
+		num2 = num1 + 1;
+		while (num2 <=99)
 		{
-			num3 = '0';
-			while (num3 <= '9')
+			ft_putchar((num1/10)+'0');
+			ft_putchar((num1%10)+'0');
+			ft_putchar(' ');
+			ft_putchar((num2/10)+'0');
+			ft_putchar((num2%10)+'0');
+			if (!(num1 == 98 && num2 == 99))
 			{
-				num4 = '0';
-				while (num4 <= '9')
-				{
-					ft_putchar(num1);
-					ft_putchar(num2);
-					ft_putchar(' ');
-					ft_putchar(num3);
-					ft_putchar(num4);
-					if (!(num1 == '9' && num2 == '8' && num3 == '9' && num4 =='9'))
-					{
-						ft_putchar(',');
-						ft_putchar(' ');
-					}
-					num4++;
-				}
-				num3++;
+				ft_putchar(',');
+				ft_putchar(' ');
 			}
 			num2++;
 		}
